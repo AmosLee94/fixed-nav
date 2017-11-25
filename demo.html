@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	body{margin: 0;}
+		header,footer{height: 300px;background-color: #eee;}
+		section{height: 1000px;}
+		nav{height: 40px;background-color: #555;}
+		.fixed-top{position: fixed;top:0;left: 0;right: 0;}
+		.container{margin:0 auto;width:1226px;overflow:hidden;}
+		.hidden{display:none;}
+	</style>
+</head>
+<body>
+	<header>header</header>
+	<nav>
+		<div class="container">nav</div>
+	</nav>
+	<section>section</section>
+	<footer>footer</footer>
+</body>
+<script type="text/javascript">
+(function(){
+	var nav = document.getElementsByTagName('nav')[0];
+	var pseudoNav = document.createElement("div");
+	pseudoNav.style.height = nav.clientHeight+'px';
+	pseudoNav.className = 'hidden';
+	document.body.insertBefore(pseudoNav,nav); // 这两种方法均可实现 
+	var y0= nav.getBoundingClientRect().top+document.body.scrollTop;
+		window.addEventListener("scroll",function(){
+			var y= document.body.scrollTop;
+			if(y>=y0){
+				nav.className = 'fixed-top';
+				pseudoNav.className = 'block';
+			}else{
+				nav.className = '';
+				pseudoNav.className = 'hidden';
+			}
+		});
+})();
+</script>
+</html>
