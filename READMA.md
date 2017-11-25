@@ -2,8 +2,8 @@
 
 需要用到的代码：
 * CSS
->` .fixed-top{position: fixed;top:0;left: 0;right: 0;}
- .hidden{display:none;}`
+>.fixed-top{position: fixed;top:0;left: 0;right: 0;}
+ .hidden{display:none;}
 ***
 * Javascript
 >(function(){
