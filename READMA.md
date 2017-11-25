@@ -2,16 +2,16 @@
 
 需要用到的代码：
 * CSS
-` .fixed-top{position: fixed;top:0;left: 0;right: 0;}
+>` .fixed-top{position: fixed;top:0;left: 0;right: 0;}
  .hidden{display:none;}`
 ***
 * Javascript
-`(function(){
+>`(function(){
 	var nav = document.getElementsByTagName('nav')[0];
 	var pseudoNav = document.createElement("div");
 	pseudoNav.style.height = nav.clientHeight+'px';
 	pseudoNav.className = 'hidden';
-	document.body.insertBefore(pseudoNav,nav); // 这两种方法均可实现 
+	document.body.insertBefore(pseudoNav,nav);
 	var y0= nav.getBoundingClientRect().top+document.body.scrollTop;
 		window.addEventListener("scroll",function(){
 			var y= document.body.scrollTop;
@@ -26,4 +26,4 @@
 })();`
 ***
 * HTML
-`导航栏用nav且第一条有效`
+>`导航栏用nav且第一条有效`
