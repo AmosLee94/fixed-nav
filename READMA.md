@@ -6,7 +6,7 @@
  .hidden{display:none;}`
 ***
 * Javascript
->`(function(){
+>(function(){
 	var nav = document.getElementsByTagName('nav')[0];
 	var pseudoNav = document.createElement("div");
 	pseudoNav.style.height = nav.clientHeight+'px';
@@ -23,7 +23,7 @@
 				pseudoNav.className = 'hidden';
 			}
 		});
-})();`
+})();
 ***
 * HTML
 >`导航栏用nav且第一条有效`
